@@ -5,15 +5,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/searchItem"
+        android:id="@+id/mainItem"
         android:icon="@drawable/coin_gray"
         android:title="mainFragment" />
     <item
-        android:id="@+id/cameraItem"
+        android:id="@+id/spendItem"
         android:icon="@drawable/coin_gray"
         android:title="spendFragment" />
     <item
-        android:id="@+id/callItem"
+        android:id="@+id/compareItem"
         android:icon="@drawable/coin_gray"
         android:title="compareFragment" />
 </menu>
