@@ -3,7 +3,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-
+    <!-- 세림 2020-12-22 현재 돼지 아이콘만 포함-->
     <ImageView
         android:id="@+id/pig"
         android:layout_width="match_parent"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+희선 2020-12-22 nagivation bar
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainItem"
+        android:icon="@drawable/coin_gray"
+        android:title="mainFragment" />
+    <item
+        android:id="@+id/spendItem"
+        android:icon="@drawable/coin_gray"
+        android:title="spendFragment" />
+    <item
+        android:id="@+id/compareItem"
+        android:icon="@drawable/coin_gray"
+        android:title="compareFragment" />
+</menu>
