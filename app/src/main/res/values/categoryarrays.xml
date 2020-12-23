@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 20201222 / 세림 / name속성은 Adapter 객체가 접근하기 위해 필요 -->
+    <string-array name="categoryarray">
+        <item>쇼핑</item>
+        <item>운동</item>
+        <item>생필품</item>
+        <item>음식</item>
+    </string-array>
+</resources>
