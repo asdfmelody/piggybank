@@ -6,8 +6,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import java.util.Date;
 
 
 public class InputForm{
@@ -35,7 +38,7 @@ public class InputForm{
 
         // 세림 2020-12-22 커스텀 다이얼로그의 각 위젯 정의
         final Spinner category = (Spinner) dlg.findViewById(R.id.category);
-        final Button datepicker = (Button) dlg.findViewById(R.id.datepicker); // 세림 2020-12-22  datepicker 수정 필요(현재 버튼으로 대체해놓음)
+        final DatePicker datepicker = (DatePicker) dlg.findViewById(R.id.datepicker); //희선 2020-12-24 DatePicker 완성
         final EditText totalprice = (EditText) dlg.findViewById(R.id.totalprice);
         final Button submit = (Button) dlg.findViewById(R.id.submit);
 
@@ -45,6 +48,8 @@ public class InputForm{
         adapter.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter);
+
+
 
         submit.setOnClickListener(new View.OnClickListener(){
             // 입력 버튼 클릭시
