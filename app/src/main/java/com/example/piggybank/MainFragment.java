@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MainFragment extends Fragment {
 
 
-    private View view;
+     View view;
 
     ImageView pigimage;
 
