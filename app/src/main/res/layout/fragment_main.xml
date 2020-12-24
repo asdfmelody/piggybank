@@ -1,9 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
 
+    <!--희선 2020-12-24-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/output"
+        android:text="output"
+        android:textSize="40dp"
+        android:textAlignment="center"/>
 
     <!-- 세림 2020-12-22 현재 돼지 아이콘만 포함-->
     <ImageView
@@ -15,4 +23,4 @@
         />
 
 
-</LinearLayout>
+</RelativeLayout>

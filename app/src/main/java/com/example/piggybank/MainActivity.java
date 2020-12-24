@@ -41,21 +41,12 @@ public class MainActivity extends AppCompatActivity {
             {
                 case R.id.mainItem:
                     transaction.replace(R.id.frameLayout, mainFragment).commitAllowingStateLoss();
-//                    transaction.addToBackStack(null);
-
                     break;
                 case R.id.spendItem:
                     transaction.replace(R.id.frameLayout, spendFragment).commitAllowingStateLoss();
-                    //transaction.addToBackStack(null);
-
-                    //transaction.show(spendFragment);
-                    //transaction.commit();
-
                     break;
                 case R.id.compareItem:
                     transaction.replace(R.id.frameLayout, compareFragment).commitAllowingStateLoss();
-     //               transaction.addToBackStack(null);
-
                     break;
             }
             return true;

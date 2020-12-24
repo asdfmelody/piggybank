@@ -53,10 +53,6 @@ public class CategoryFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
 
-
-
-
-
         return view;
     }
 
