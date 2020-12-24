@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 세림 2020-12-22 현재 돼지 아이콘만 포함-->
+    <ImageView
+        android:id="@+id/pig"
+        android:layout_width="match_parent"
+        android:layout_height="268dp"
+        android:layout_weight="0.56"
+        android:src="@drawable/pig"
+        />
+
+
+</LinearLayout>
