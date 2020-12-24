@@ -36,6 +36,7 @@ public class SpendFragment extends Fragment {
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         //tabLayout.addTab(new CategoryFragment(),0);
         tabLayout.setupWithViewPager(viewPager);
+
         return view;
     }
 
