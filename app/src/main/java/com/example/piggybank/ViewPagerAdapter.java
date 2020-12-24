@@ -1,15 +1,18 @@
 package com.example.piggybank;
 
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
-    private ArrayList<Fragment> items;
+public class ViewPagerAdapter extends FragmentPagerAdapter {
+    private ArrayList<Fragment> items=new ArrayList<>();
 
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
@@ -22,6 +25,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
         switch(position){
             case 0:
+
                 return new CategoryFragment();
             case 1:
                 return new MonthFragment();
@@ -47,5 +51,12 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             default:
                 return null;
         }
+    }
+    public void addItem(Fragment fragment){
+        items.add(fragment);
+    }
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+
     }
 }

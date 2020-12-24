@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class CategoryFragment extends Fragment {
 
     ArrayList<PiggybankData> list = new ArrayList<>();
     View view;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +42,16 @@ public class CategoryFragment extends Fragment {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(new RecyclerAdapter(list));*/
+
+        list.add(new PiggybankData("옷","1000"));
+        list.add(new PiggybankData("옷","1000"));
+        list.add(new PiggybankData("옷","1000"));
+
+        RecyclerAdapter adapter = new RecyclerAdapter(list);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        recyclerView.setAdapter(adapter);
 
 
 
@@ -59,18 +71,15 @@ public class CategoryFragment extends Fragment {
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+    }
 
     @Override
     public void onResume() {
         super.onResume();
-        list.add(new PiggybankData("옷","1000"));
-        list.add(new PiggybankData("옷","1000"));
-        list.add(new PiggybankData("옷","1000"));
 
-        RecyclerAdapter adapter = new RecyclerAdapter(list);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(adapter);
     }
 }

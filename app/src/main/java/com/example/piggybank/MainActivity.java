@@ -2,6 +2,7 @@ package com.example.piggybank;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -15,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private MainFragment mainFragment =new MainFragment();
-    private SpendFragment spendFragment = new SpendFragment();
+    private SpendFragment spendFragment =new SpendFragment() ;
     private CompareFragment compareFragment = new CompareFragment();
 
     @Override
@@ -24,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //기본 페이지 - mainFragment
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameLayout, mainFragment).commitAllowingStateLoss();
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
@@ -34,21 +34,32 @@ public class MainActivity extends AppCompatActivity {
     class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener{
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 
             switch(menuItem.getItemId())
             {
                 case R.id.mainItem:
                     transaction.replace(R.id.frameLayout, mainFragment).commitAllowingStateLoss();
+//                    transaction.addToBackStack(null);
+
                     break;
                 case R.id.spendItem:
                     transaction.replace(R.id.frameLayout, spendFragment).commitAllowingStateLoss();
+                    //transaction.addToBackStack(null);
+
+                    //transaction.show(spendFragment);
+                    //transaction.commit();
+
                     break;
                 case R.id.compareItem:
                     transaction.replace(R.id.frameLayout, compareFragment).commitAllowingStateLoss();
+     //               transaction.addToBackStack(null);
+
                     break;
             }
             return true;
         }
     }
+
+
 }
