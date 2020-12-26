@@ -1,26 +1,26 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
     <!--희선 2020-12-24-->
+    <!--세림 2020-12-26-->
     <TextView
+        android:id="@+id/output"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/output"
+        android:layout_marginTop="50dp"
         android:text="output"
-        android:textSize="40dp"
-        android:textAlignment="center"/>
+        android:textSize="20dp" />
 
-    <!-- 세림 2020-12-22 현재 돼지 아이콘만 포함-->
     <ImageView
         android:id="@+id/pig"
         android:layout_width="match_parent"
         android:layout_height="268dp"
         android:layout_weight="0.56"
-        android:src="@drawable/pig"
-        />
+        android:src="@drawable/pig" />
+
+</LinearLayout>
 
 
-</RelativeLayout>

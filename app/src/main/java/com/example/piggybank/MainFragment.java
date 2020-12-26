@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainFragment extends Fragment {
 
@@ -42,35 +43,26 @@ public class MainFragment extends Fragment {
         pigimage.setImageResource(R.drawable.pig);
         pigimage.setOnClickListener(new MyListener());
 
-
         //희선 2020-12-26
         //Select 쿼리 이용
         //변수를 통해 데이터 조작시 참고 :  https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221406135285&proxyReferer=https:%2F%2Fwww.google.com%2F
-        Cursor c = db.query("mytable11",null,"year=2016",null,null,null,null,null);
+        //세림 2020-12-26 출력시 현재 달 총 금액 출력 - strftime
+        Cursor c = db.query("mytable11",null,"month=(strftime('%m', 'now')-1)",null,null,null,null,null);
 
         String Result = "output"; //쿼리에 맞게 누적된 정보 저장
+        int p = 0;
 
         //희선 2020-12-24 쿼리문 실행
         while(c.moveToNext()) {
-            String cat = c.getString(c.getColumnIndex("category"));
-            int y = c.getInt(c.getColumnIndex("year"));
-            int m = c.getInt(c.getColumnIndex("month"));
-            int d = c.getInt(c.getColumnIndex("day"));
-            int p = c.getInt(c.getColumnIndex("price"));
-            //String amount 가 필요!
-
-            Result = "";
-            Result += cat + "," + y + "," + m + "," + d+","+p;
+            p+=c.getInt(c.getColumnIndex("price"));
         }
 
-        Log.d("asdfResult값",Result);
 
         output = (TextView) view. findViewById(R.id.output);
-        output.setText(Result);
+        output.setText("이번 달은 " + p + "원을 썼어요!");
 
         return view;
     }
-
 
 
         // 세림 2020-12-22 돼지 아이콘 클릭시 커스텀다이얼로그 표시
