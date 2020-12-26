@@ -13,19 +13,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE if not exists mytable10 (" //테이블 중복 생성문 방지
+        //희선 2020-12-24 테이블 생성
+        String sql = "CREATE TABLE if not exists mytable11 (" //테이블 중복 생성문 방지
                 + "category text,"
                 + "year integer,"
                 + "month integer,"
-                + "day integer);";
-                //amount 추가 해야함.
+                + "day integer,"
+                + "price integer);"; //희선 2020-12-26 amount 추가 (입력 안했을 시 다음 단계로 넘어가지 않음
                 //primary key autoincrement,
         db.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sql = "DROP TABLE if exists mytable10";
+        String sql = "DROP TABLE if exists mytable";
 
         db.execSQL(sql);
         onCreate(db);

@@ -3,8 +3,10 @@ package com.example.piggybank;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -81,6 +83,9 @@ public class InputForm {
                 final int dbyear = datepicker.getYear();
                 final int dbmonth = datepicker.getMonth();
                 final int dbday = datepicker.getDayOfMonth();
+                final int dbprice = Integer.parseInt(totalprice.getText().toString()); //int로 변환
+
+                Log.d("asdf-dbprice값", String.valueOf(dbprice)); //dbprice 변환 잘 되었는지 확인
 
                 //insert 하기 전 values 에 저장할 데이터 넣기
                 ContentValues values = new ContentValues();
@@ -88,33 +93,13 @@ public class InputForm {
                 values.put("year",dbyear);
                 values.put("month",dbmonth);
                 values.put("day",dbday);
+                values.put("price",dbprice);
 
                 //insert
-                db.insert("mytable10",null,values);
-
-                //쿼리 이용
-                //변수를 통해 데이터 조작시 참고 :  https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221406135285&proxyReferer=https:%2F%2Fwww.google.com%2F
-                Cursor c = db.query("mytable10",null,"year=2016",null,null,null,null,null);
-
-                String Result = ""; //쿼리에 맞게 누적된 정보 저장
-
-                //희선 2020-12-24 쿼리문 실행
-                while(c.moveToNext()) {
-                    String cat = c.getString(c.getColumnIndex("category"));
-                    int y = c.getInt(c.getColumnIndex("year"));
-                    int m = c.getInt(c.getColumnIndex("month"));
-                    int d = c.getInt(c.getColumnIndex("day"));
-                    //String amount 가 필요!
-
-                    Result += cat + "," + y + "," + m + "," + d;
-                }
-
-                totalprice.setText(Result);
-                Log.d("asasdfasdf",Result);
-
+                db.insert("mytable11",null,values);
 
                 // 세림 2020-12-22 커스텀 다이얼로그 종료
-                //dlg.dismiss();
+                dlg.dismiss();
             }
         });
 
