@@ -3,19 +3,18 @@ package com.example.piggybank;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<ItemViewHolder> {
+public class RecyclerAdapter2 extends RecyclerView.Adapter<ItemViewHolder> {
 
 
     private ArrayList<PiggybankData> list;
 
-    public RecyclerAdapter(ArrayList<PiggybankData> list){
+    public RecyclerAdapter2(ArrayList<PiggybankData> list){
         this.list = list;
 
     }
@@ -31,7 +30,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
        // ((ItemViewHolder)holder).onBind(ist.get(position));
 
-        holder.category.setText(list.get(position).getCategory());
+        holder.category.setText(list.get(position).getDate().toString()+" 월");
        holder.money.setText(String.valueOf(list.get(position).getMoney()));
 
     }
