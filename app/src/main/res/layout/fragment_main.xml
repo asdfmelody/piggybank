@@ -21,6 +21,68 @@
         android:layout_weight="0.56"
         android:src="@drawable/pig"
         />
+    
+        <!-- 정애 2020-12-24 똥사진 추가     -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <ImageView
+        android:id="@+id/thirtyview"
+        android:layout_width="256dp"
+        android:layout_height="234dp"
+        android:layout_gravity="right"
+        android:scaleType="fitEnd"
+        android:visibility="invisible"
+
+        app:srcCompat="@drawable/thirty" />
+
+        <ImageView
+            android:id="@+id/fiftyview"
+            android:layout_width="256dp"
+            android:layout_height="234dp"
+            android:layout_gravity="right"
+            app:srcCompat="@drawable/fifty"
+            android:visibility="invisible"/>
+
+
+        <ImageView
+            android:id="@+id/seventyview"
+            android:layout_width="256dp"
+            android:layout_height="234dp"
+            android:layout_gravity="right"
+            android:scaleType="fitEnd"
+
+            app:srcCompat="@drawable/seventy"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/hundredview"
+            android:layout_width="256dp"
+            android:layout_height="234dp"
+            android:layout_gravity="right"
+            android:scaleType="fitEnd"
+
+            app:srcCompat="@drawable/hundred"
+            android:visibility="invisible"/>
+
+
+
+    </FrameLayout>
+    
+    <!-- 퍼센트 텍스트뷰      -->
+    <TextView
+        android:id="@+id/percentview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_weight="0.2"
+        android:text="    "
+        android:textSize="30sp" />
+
+
+
 
 
 </RelativeLayout>
