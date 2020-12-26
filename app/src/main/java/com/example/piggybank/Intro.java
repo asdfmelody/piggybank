@@ -1,4 +1,4 @@
-package com.example.splash;
+package com.example.piggybank;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -2,6 +2,7 @@ package com.example.piggybank;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -15,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     private MainFragment mainFragment =new MainFragment();
-    private SpendFragment spendFragment = new SpendFragment();
+    private SpendFragment spendFragment =new SpendFragment() ;
     private CompareFragment compareFragment = new CompareFragment();
 
     @Override
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener{
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction transaction= getSupportFragmentManager().beginTransaction();
 
             switch(menuItem.getItemId())
             {
@@ -51,4 +52,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+
 }
