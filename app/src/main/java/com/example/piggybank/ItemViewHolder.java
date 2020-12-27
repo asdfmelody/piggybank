@@ -14,8 +14,8 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
     public ItemViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        category=itemView.findViewById(R.id.textView);
-        money=itemView.findViewById(R.id.textView2);
+        category=itemView.findViewById(R.id.comparemoney);
+        money=itemView.findViewById(R.id.presentview);
 
 
 
