@@ -61,6 +61,16 @@
             app:layout_constraintBottom_toTopOf="@id/comparemoney" />
 
         <ImageView
+            android:id="@+id/beggar"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/beggar"
+            android:visibility="visible"
+            />
+
+        <ImageView
             android:id="@+id/movie"
             android:layout_width="150dp"
             android:layout_height="200dp"

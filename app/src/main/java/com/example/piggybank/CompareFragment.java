@@ -58,38 +58,42 @@ public class CompareFragment extends Fragment {
         presentview = (TextView)view.findViewById(R.id.presentview);
         choiceview = (ImageView)view.findViewById(R.id.movie);
 
-       int[] imageArray = {R.drawable.movie, R.drawable.chicken, R.drawable.cake, R.drawable.cloth, R.drawable.shoes};
+       int[] imageArray = {R.drawable.beggar, R.drawable.movie, R.drawable.chicken, R.drawable.cake, R.drawable.cloth, R.drawable.shoes};
 
 
         comparetotal.setText( Integer.toString(checkmoney) + "원");
 
+        if(checkmoney <0){
+            choiceview.setImageResource(imageArray[0]);
+
+        }
 
         if(checkmoney < 20000 && checkmoney >= 10000){
-            choiceview.setImageResource(imageArray[0]);
+            choiceview.setImageResource(imageArray[1]);
             presentview.setText("영화티켓");
 
         }
 
         else if (checkmoney >= 20000 && checkmoney < 30000){
-            choiceview.setImageResource(imageArray[1]);
+            choiceview.setImageResource(imageArray[2]);
             presentview.setText("치킨 한마리");
 
         }//20000 치킨 한마리
 
         else if (checkmoney >= 30000 && checkmoney < 50000){
-            choiceview.setImageResource(imageArray[2]);
+            choiceview.setImageResource(imageArray[3]);
             presentview.setText("케이크");
 
         }// 30000 케이크
 
         else if (checkmoney >= 50000 && checkmoney < 100000){
-            choiceview.setImageResource(imageArray[3]);
+            choiceview.setImageResource(imageArray[4]);
             presentview.setText("후드티");
 
         }// 50000 후드티
 
         else if (checkmoney >= 10000){
-            choiceview.setImageResource(imageArray[4]);
+            choiceview.setImageResource(imageArray[5]);
             presentview.setText("신발");
 
         }//100000 신발
