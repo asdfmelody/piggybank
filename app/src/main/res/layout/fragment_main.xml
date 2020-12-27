@@ -70,9 +70,9 @@
             android:id="@+id/percentview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="25dp"
             android:layout_weight="0.2"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
 
 
     </FrameLayout>
