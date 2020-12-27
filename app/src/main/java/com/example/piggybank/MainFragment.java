@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -26,14 +28,17 @@ public class MainFragment extends Fragment {
 
     ImageView pigimage;
     TextView output;
+    TextView percentoutput;
   
    ImageView thirty;
     ImageView fifty;
     ImageView seventy;
     ImageView hundred;
 
-    int pretotal=10; //저번달 데이터값
-    int thistotal=10; //이번달 데이터값
+
+
+    int pretotal=500000; //저번달 데이터값
+    int thistotal=900000; //이번달 데이터값
 
     //데이터 값 DB
 
@@ -62,10 +67,9 @@ public class MainFragment extends Fragment {
         
         pigimage.setImageResource(R.drawable.pig);
         pigimage.setOnClickListener(new MyListener());
-        
-        
-        
-        if(30 <= percentage || percentage < 50) {
+
+
+        if(30 <= percentage && percentage < 50) {
             thirty.setVisibility(view.VISIBLE);
             fifty.setVisibility(view.INVISIBLE);
             seventy.setVisibility(view.INVISIBLE);
@@ -73,28 +77,31 @@ public class MainFragment extends Fragment {
 
         }
 
-        else if(50 <= percentage || percentage < 70){
+        else if(50 <= percentage && percentage < 70){
             thirty.setVisibility(view.INVISIBLE);
             fifty.setVisibility(view.VISIBLE);
             seventy.setVisibility(view.INVISIBLE);
             hundred.setVisibility(view.INVISIBLE);
         }
 
-        else if(70<= percentage || percentage <100){
+        else if(70<= percentage && percentage <100){
             thirty.setVisibility(view.INVISIBLE);
             fifty.setVisibility(view.INVISIBLE);
             seventy.setVisibility(view.VISIBLE);
             hundred.setVisibility(view.INVISIBLE);
         }
 
-        else if (percentage == 100){
+        else if (percentage >= 100){
             thirty.setVisibility(view.INVISIBLE);
             fifty.setVisibility(view.INVISIBLE);
             seventy.setVisibility(view.INVISIBLE);
             hundred.setVisibility(view.VISIBLE);
         }
 
+        percentoutput = (TextView) view. findViewById(R.id.percentview);
+        percentoutput.setText(Integer.toString(percentage) + "%");
         
+
         
         
 
@@ -115,6 +122,9 @@ public class MainFragment extends Fragment {
 
         output = (TextView) view. findViewById(R.id.output);
         output.setText("이번 달은 " + p + "원을 썼어요!");
+
+
+
 
         return view;
     }

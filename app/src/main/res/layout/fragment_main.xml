@@ -66,19 +66,18 @@
             android:visibility="invisible"
             app:srcCompat="@drawable/hundred" />
 
+        <TextView
+            android:id="@+id/percentview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_weight="0.2"
+            android:textSize="30sp" />
+
 
     </FrameLayout>
 
     <!-- 퍼센트 텍스트뷰      -->
-
-    <TextView
-        android:id="@+id/percentview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_weight="0.2"
-        android:text="    "
-        android:textSize="30sp" />
 
 </LinearLayout>
 
