@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <font
-        android:font="@font/tmoneyroundwingregular"
+        android:font="@font/tmoneyroundwindextrabold"
         android:fontStyle="normal"
         android:fontWeight="400"
-        app:font="@font/tmoneyroundwingregular"
+        app:font="@font/tmoneyroundwindextrabold"
         app:fontStyle="normal"
         app:fontWeight="500" />
 
