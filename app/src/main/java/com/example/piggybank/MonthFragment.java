@@ -106,9 +106,9 @@ public class MonthFragment extends Fragment {
 
             }
             else if(m==12){
-
+                sum[11]+=p;
             }
-       
+
 
            // list2.add(new PiggybankData(cat,p,String.valueOf(d)));
             //Result = "";

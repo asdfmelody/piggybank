@@ -1,26 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
 
     <TextView
         android:id="@+id/comparetext"
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="이전 달 보다 아낀 금액"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/navigationView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling">
+
+
+        <TextView
+            android:id="@+id/comparemoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/comparetext" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="600dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/cointwallet"></ImageView>
+
+        <TextView
+            android:id="@+id/presentview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="550dp"
+            android:text="TextView"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/comparemoney" />
+
+        <ImageView
+            android:id="@+id/movie"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/movie"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:id="@+id/chicken"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/chicken"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/cloth"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/cloth"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/shoes"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/shoes"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:id="@+id/cake"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            app:srcCompat="@drawable/cake"
+            android:visibility="invisible"/>
+    </FrameLayout>
+
 
     <TextView
         android:id="@+id/textView"
