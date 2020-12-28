@@ -63,7 +63,7 @@ public class CompareFragment extends Fragment {
 
         comparetotal.setText( Integer.toString(checkmoney) + "원");
 
-        if(checkmoney <0){
+        if(checkmoney <10000){
             choiceview.setImageResource(imageArray[0]);
 
         }

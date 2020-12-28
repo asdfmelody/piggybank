@@ -51,6 +51,7 @@ public class MainFragment extends Fragment {
         final SQLiteDatabase db = helper.getWritableDatabase();
 
 
+
         // 세림 2020-12-22 res/drawble 폴더에 있는 이미지로 세팅하기
         pigimage = (ImageView) view.findViewById(R.id.pig);
 
@@ -60,9 +61,9 @@ public class MainFragment extends Fragment {
         //희선 2020-12-26
         //Select 쿼리 이용
         //변수를 통해 데이터 조작시 참고 :  https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221406135285&proxyReferer=https:%2F%2Fwww.google.com%2F
-/*<<<<<<< HEAD
+/*
         Cursor c = db.query("mytable11",null,null,null,null,null,null,null);
-=======*/
+*/
         //세림 2020-12-26 출력시 현재 달 총 금액 출력 - strftime
         Cursor cthistotal = db.query("mytable11",null,"month=(strftime('%m', 'now')-1)",null,null,null,null,null);
 
@@ -74,6 +75,7 @@ public class MainFragment extends Fragment {
         while(cthistotal.moveToNext()) {
             thistotal+=cthistotal.getInt(cthistotal.getColumnIndex("price"));
         }
+
 
 
         output = (TextView) view. findViewById(R.id.output);
@@ -95,6 +97,7 @@ public class MainFragment extends Fragment {
         double division = thistotal/pretotal -1;
         percentage = (int) (division * 100);
         Log.d("dsf-percentage", String.valueOf(percentage));
+
 
 
 
