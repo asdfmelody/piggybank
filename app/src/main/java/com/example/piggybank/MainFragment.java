@@ -60,8 +60,12 @@ public class MainFragment extends Fragment {
         //희선 2020-12-26
         //Select 쿼리 이용
         //변수를 통해 데이터 조작시 참고 :  https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221406135285&proxyReferer=https:%2F%2Fwww.google.com%2F
+/*<<<<<<< HEAD
+        Cursor c = db.query("mytable11",null,null,null,null,null,null,null);
+=======*/
         //세림 2020-12-26 출력시 현재 달 총 금액 출력 - strftime
         Cursor cthistotal = db.query("mytable11",null,"month=(strftime('%m', 'now')-1)",null,null,null,null,null);
+
 
         String Result = "output"; //쿼리에 맞게 누적된 정보 저장
         double thistotal = 0;
