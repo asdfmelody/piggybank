@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,7 @@ public class MonthFragment extends Fragment {
     ArrayList<PiggybankData> list2 = new ArrayList<>();
     ArrayList<PiggybankData> list2months = new ArrayList<>();
 
-    int sum[]=new int[12];
+    int sum[]=new int[13];
     int sums=0;
     public MonthFragment() {
         // Required empty public constructor
@@ -49,7 +50,7 @@ public class MonthFragment extends Fragment {
         Cursor c = db.query("mytable11",null,null,null,null,null,null,null);
 
         String Result = "output"; //쿼리에 맞게 누적된 정보 저장
-        for(int i=0;i<12;i++){
+        for(int i=0;i<13;i++){
             sum[i]=0;
         }
         //희선 2020-12-24 쿼리문 실행
@@ -62,51 +63,51 @@ public class MonthFragment extends Fragment {
             //String amount 가 필요!
 
             if(m==1){
-                sum[0]+=p;
-
-            }
-            else if(m==2){
                 sum[1]+=p;
 
             }
-            else if(m==3){
+            else if(m==2){
                 sum[2]+=p;
 
             }
-            else if(m==4){
+            else if(m==3){
                 sum[3]+=p;
 
             }
-            else if(m==5){
+            else if(m==4){
                 sum[4]+=p;
 
             }
-            else if(m==6){
+            else if(m==5){
                 sum[5]+=p;
 
             }
-            else if(m==7){
+            else if(m==6){
                 sum[6]+=p;
 
             }
-            else if(m==8){
+            else if(m==7){
                 sum[7]+=p;
 
             }
-            else if(m==9){
+            else if(m==8){
                 sum[8]+=p;
 
             }
-            else if(m==10){
+            else if(m==9){
                 sum[9]+=p;
 
             }
-            else if(m==11){
+            else if(m==10){
                 sum[10]+=p;
 
             }
-            else if(m==12){
+            else if(m==11){
                 sum[11]+=p;
+
+            }
+            else if(m==12){
+                sum[12]+=p;
             }
 
 
@@ -116,12 +117,14 @@ public class MonthFragment extends Fragment {
         }
 
 
-        for(int i=0;i<12;i++){
+        for(int i=1;i<13;i++){
 
-                    list2months.add(new PiggybankData("", sum[i], String.valueOf(i + 1)));
+                    list2months.add(new PiggybankData("", sum[i-1], String.valueOf(i )));
 
         }
-
+        for (int j=1;j<13;j++) {
+            Log.d("asdf", String.valueOf(sum[j]));
+        }
 /*
 
         list2.add(new PiggybankData("1월","2000"));

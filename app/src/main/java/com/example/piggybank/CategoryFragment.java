@@ -72,7 +72,7 @@ public class CategoryFragment extends Fragment {
                 sum1 += p;
             } else if (cat.equals("운동")) {
                 sum2 += p;
-            } else if (cat.equals("생필품")) {
+            } else if (cat.equals("생활품")) {
                 sum3 += p;
             } else if (cat.equals("음식")) {
                 sum4 += p;
@@ -84,7 +84,7 @@ public class CategoryFragment extends Fragment {
         }
         listcates.add(new PiggybankData("쇼핑",sum1, ""));
         listcates.add(new PiggybankData("운동",sum2, ""));
-        listcates.add(new PiggybankData("생필품",sum3, ""));
+        listcates.add(new PiggybankData("생활품",sum3, ""));
         listcates.add(new PiggybankData("음식",sum4, ""));
 
 
