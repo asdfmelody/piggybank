@@ -3,7 +3,7 @@
 ### 꼬로롱 기능 설명
 ------------
 ### 개발기간
-2020년 12월 한달간
+* 2020년 12월 한달간
 ------------
 ### [mainFragment]
 ![mainfrag](https://user-images.githubusercontent.com/67946662/103258640-4805c280-49d9-11eb-88c3-099ed09fea4e.PNG)
